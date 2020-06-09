@@ -2,16 +2,15 @@
 <body>
 
 <table id="table">
-    <tr>
-<th>Voornaam</th>
-<th>Achternaam</th>
-<th>Klas</th>
-<th>Leeftijd</th>
-<th>Woonplaats</th>
-      
-</tr>
-    <tr>
+    
 <?php 
+$daan = array("voornaam"=>"Daan","achternaam"=>"de Jager","klas"=>"9c","Leeftijd"=>16,"Woonplaats"=>"Uithoorn");
+function maakRij($key,$value){
+    
+    echo "<tr> <td> $key </td> <td> $value </td> </tr>" ;
+}
+
+
 $bgkleur = $_POST["bgkleur"]; 
 $dikte = $_POST["border"];
 $padding = $_POST["padding"];
@@ -26,19 +25,14 @@ td,th{
 }
 
 </style>";
-echo    "<body style='color:$textkleur;background-color:$bgkleur'>" ; 
-
-function maakRij(){
-        $daan = array("voornaam"=>"Daan","achternaam"=>"de Jager","klas"=>"9c","Leeftijd"=>16,"Woonplaats"=>"Uithoorn");
-        foreach($daan as $value){
-            echo "<td> $value </td> <br>";
-        }
-    }
-maakRij();
-   
+echo    "<body style='color:$textkleur;background-color:$bgkleur'>" ;  
+ 
+foreach($daan as $key => $value){
+  echo  maakRij();
+}
 
 ?>
-    </tr>
+    
 </table>
 </body>
 </hmtl>
