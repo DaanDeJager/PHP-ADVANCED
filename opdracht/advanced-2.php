@@ -28,7 +28,7 @@ td,th{
 echo    "<body style='color:$textkleur;background-color:$bgkleur'>" ;  
  
 foreach($daan as $key => $value){
-  echo  maakRij();
+ maakRij($key,$value);
 }
 
 ?>
